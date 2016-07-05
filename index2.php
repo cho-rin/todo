@@ -19,8 +19,13 @@ and open the template in the editor.
         <table border="1">
            <?php $hello=101;
      for($i=1;$i<$hello;$i++){ ?>
-            <tr><td><?php echo"A".$i."<br>";?></td>
-                <td> <?php echo"B".$i."<br>"; ?></td> </tr> 
+            <tr><td>
+                <?php echo"A".$i."<br>";?>
+                </td>
+                <td>
+                <?php echo"B".$i."<br>"; ?>
+                </td>
+            </tr> 
             <?php }  ?>
         </table>
         <form action="test3.php" method="POST">

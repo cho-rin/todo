@@ -1,0 +1,122 @@
+<!--htmlテキストの練習-->
+<html>
+    <head>
+        <title>練習</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css.css"rel="stylesheet"type="text/css"/>
+    </head>
+    <body bgcolor="dcdcdc">
+      <div id="container">
+          <div id="header">welcom</div>
+          <div id="menu">
+              <a href="index.php">トップ</a>
+          </div>
+          <div id="contents">
+              <p>どうぞ</p>
+          </div>
+          </div>
+        <ul>
+        <li><p>ためし</p></li>
+        <li><p>タメシ</p></li>
+        <li><h1>大文字</h1></li>
+         </ul>
+        <ol><li><p><b>太字</b></p></li>
+        <li><p><i>斜体</i></p></li>
+        <li><p><u>下線</u></p></li>
+       </ol>  
+        <h3>タグ</h3>
+       <dt>項目名</dt>
+       <dd>説明文</dd>
+       <div class="product">
+       <img src="images" hspace="20" align="middle"/>
+       </div>
+       <a href="http://google.co.jp"><h3>googleへ</h3></a>
+       <a href="mailto:ssss@hhhh.co.jp">メール送る</a>
+       <p style="font-size: 25px; color: #ff9966;">大きさ25px、色＃ff9966です。</p>
+       <p>一部だけ<span style="color:#ff1166;">異なる色</span>
+       <p style="text-decoration:line-through;">に変更する</p></p>
+        <pre> 空　　　　　白</pre>
+        <p class="blue">p.blueは青</p>
+        <div id="header">黒地に白文字</div>
+        <p>このサイトのコンセプトは、<span class="new_key">「実務で使う可能性が高いものだけを精査して掲載する」</span>です</p>
+        <p></p>
+        <div>TODO write content</div>
+        <table border="10">
+            <tr>
+                <th>名前</th>
+                <th>値段</th>
+                <th>メーカー</th>
+            </tr>
+            <tr>
+                <td>商品A</td>
+                <td>5</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>商品B</td>
+                <td>10</td>
+                <td>meji</td>
+            </tr>
+        </table>
+        <from action="order.cgi" method="post">
+            <p>お名前</p>
+            <input type="text" name="name" size="45"/>
+            <p>メール</p>
+            <input type="text" name="email" size="45"/>
+            <p>電話番号</p>
+            <input type="text" name="tel1" size="4" maxlength="4">-
+            <input type="text" name="tel2" size="4" maxlength="4">-
+            <input type="text" name="tel3" size="4" maxlength="4">
+            <p>郵便番号</p>
+            <input type="text" name="zip" size="15" maxlength="7"/>(ハイフンなし）
+            <p>住所</p>
+            <textarea name="address" rows="2" cols="40"></textarea>
+            <p><div>
+                <input type="checkbox" name="products" vaule="水"/>水
+                <select name="warter_number">
+                    <option value="1" selected="selected">1本</option>
+                    <option value="10">10本</option>
+                    <option value="20">20本</option>
+                </select>
+               </div>
+            <div>
+                <input type="checkbox" name="products" vaule="お茶"/>お茶
+                <select name="tea">
+                    <option value="1" selected="selected">1本</option>
+                    <option value="3">3本</option>
+                    <option value="5">5本</option>
+                </select>
+                <p>お住まい</p>
+                <select name="prefecture">
+                    <option value="empty" selected="selcted"></option>
+                    <option value="東京">東京</option>   
+                    <option value="大阪">大阪</option>
+                </select>
+                <p>プライバシー</p>
+                <input type="radio" name="answer" value="yes"/>yes
+                <input type="radio" name="answer" value="no"/>no
+                <input type="radio" name="answer" value="other" checked="checked"/>other
+            </div></p>
+            <div style="margin-top: 10px; padding-top: 10px;border-top: 1px #c0c0c0 dotted">
+                <input type="submit" value="送信する"/>
+                <input type="reset" value="キャンセル"/>
+            </div>
+        </from>
+        <table>
+            <tr>
+            <th>名前</th>
+            <td>張</td>
+            </tr>
+            <tr>
+             <th>性別</th>
+             <td>男</td>                  
+            </tr>
+            <tr>
+                <th>電話番号</th>
+                <td>888493032</td>
+            </tr>
+        </table>
+        
+    </body>
+</html>
