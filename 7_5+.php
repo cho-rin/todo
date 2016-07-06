@@ -45,10 +45,11 @@ $link->set_charset('utf8');
 $sql = 'SELECT * from todo_list';
 $result = $link->query($sql);
 $data = [];
+echo("<tr><th>id</th><th>task</th></tr>");
 while($row = $result->fetch_assoc()){
     $data[] = $row;
         echo('<p>');
-        echo("<tr><th>id</th><th>task</th></tr>");
+        
         echo('<tr><td>');
         echo $row["id"];
         echo ('</td><td>');
