@@ -1,18 +1,18 @@
 <?php
 $name=$_GET['name'];
+$id=$_GET['id'];
 ?>
 
-<form action="test4.php" method="post">
+<form action="edited.php" method="post">
 <table border="1">
     <tr>
       <td><input type="text" value="<?php echo $name ?> " name="newname">
-          <input type="hidden" value="$number"number="$number"></td>
+          <input type="hidden" value="<?php echo $id ?>" name="id" ></td>
       <td colspan="2" align="center">
         <input type="submit" value="確定">
         <a href ="7_61.php? name=キャンセル">キャンセル</a>
-        </form>
+       
       </td>
     </tr>
     </table>
-</body>
-</html>
+     </form>
