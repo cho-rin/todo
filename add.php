@@ -1,8 +1,19 @@
 <html>
 <head><title>予定入れましょう</title></head>
 <body>
-予定を入力してみましょう。
-<form action="added.php" method="post">
+    <form action="added.php" method="post">
+<?php
+
+require_once '/common/database.php';
+$result=get_category();
+    $data = [];?>
+      <select name="sen">
+    <?php
+    while($row =$result->fetch_assoc()){
+    $data[] = $row;?>
+ <option value="<?php echo $row['name'];?>"> <?php echo $row['name'];?></option>
+    <?php  
+} ?> 
   <table border="1">
     <tr>
       <td>ここに入れましょう</td>
@@ -14,6 +25,6 @@
       </td>
     </tr>
     </table>
-</form>
+</select></form>
 </body>
 </html>

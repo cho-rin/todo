@@ -11,7 +11,7 @@ function get_todo_list(){
     return $result;
 }
 function add_todo($name,$time){
-    $result=database("INSERT INTO todo_list (task,created_at) values ('".$name."','".$time."');");
+    $result=database("INSERT INTO todo_list (task,created_at,category_id) values ('".$name."','".$time."','".$category."');");
         return $result;
 }
 function delete_todo($name){
@@ -29,4 +29,8 @@ function completed($name,$id){
 function completed_list(){
     $result=database("SELECT * from todo_list where completed_at is not null");
     return $result;
+}
+function get_category(){
+   $result=database("SELECT * from category");
+    return $result; 
 }

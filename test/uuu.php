@@ -15,3 +15,9 @@
     ?>
   </body>
 </html
+ SELECT * FROM todo_list;
+ SELECT * FROM category;
+ SELECT c.task,a.name 
+FROM todo_list AS c , category AS a  
+ WHERE c.category_id=a.id;
+ 
