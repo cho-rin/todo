@@ -1,6 +1,6 @@
 <?php
-$name=$_GET['number'];
+$id=$_GET['id'];
 require_once '/common/database.php';
-$result=  delete_todo($name);
+$result=  delete_todo($id);
 header("Location:http://localhost/todo/todo_list.php");
 ?>

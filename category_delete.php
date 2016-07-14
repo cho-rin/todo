@@ -1,6 +1,6 @@
 <?php
-$name=$_GET['number'];
-require_once '/common/database.php';
-$result=database("DELETE FROM category WHERE id =".$name);
-header("Location:http://localhost/todo/category_list.php?name=category");
+    $id=$_GET['id'];
+    require_once '/common/database.php';
+    $result=category_delete($id);
+    header("Location:http://localhost/todo/category_list.php?name=category");
 ?>
