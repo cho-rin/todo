@@ -1,23 +1,34 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title></title>
-  </head>
-  <body>
-    <?php
-    require_once 'utils.php'; //関数呼び出しより手前に記述する
+<?php
+    session_start();
+?>
 
-    echo('sum: '.utl_sum(12,5).'<br/>');
-    echo('mul: '.utl_mul(12,5).'<br/>');
-    echo('div: '.utl_div(12,5).'<br/>');
-    echo('sub: '.utl_sub(12,5).'<br/>');
-    ?>
-  </body>
+<html>
+<head><title>PHP TEST</title></head>
+<body>
+
+<?php
+
+    if (!isset($_SESSION["visited"])){
+        print('初回の訪問です。セッションを開始します。');
+
+        $_SESSION["visited"] = 1;
+        $_SESSION["date"] = date('c');
+    }else{
+        $visited = $_SESSION["visited"];
+        $visited++;
+
+        print('訪問回数は'.$visited.'です。<br>');
+
+        $_SESSION["visited"] = $visited;
+
+        if (isset($_SESSION["date"])){
+            print('前回の訪問日時は'.$_SESSION["date"].'です。<br>');
+        }
+
+        $_SESSION["date"] = date('c');
+    }
+
+?>
+
+</body>
 </html
- SELECT * FROM todo_list;
- SELECT * FROM category;
- SELECT c.task,a.name 
-FROM todo_list AS c , category AS a  
- WHERE c.category_id=a.id;
- 

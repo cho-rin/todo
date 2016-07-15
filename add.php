@@ -1,3 +1,10 @@
+<?php session_start();
+// ログイン状態のチェック
+if (!isset($_SESSION["user_name"])) {
+  header("Location: logout.php");
+  exit;
+} ?>
+<div align="center"><?php echo $_SESSION["user_name"] ?></div>
 <form action="added.php" method="post">
     <table border="1">
         <tr>

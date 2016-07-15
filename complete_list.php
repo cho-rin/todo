@@ -16,7 +16,7 @@
                     echo('<p>');
                     echo('<tr>');
                     echo ('<td align="center"><pre>');
-                    echo $row["name"]; echo $row["task"];
+                    echo$row['user_name']. $row['name'].  $row['task'];
                     $datetime = new DateTime($row["completed_at"]);
                     $current = new DateTime($row["created_at"]);
                     $diff = $current->diff($datetime);
@@ -49,7 +49,10 @@
                     $time=$time.sprintf('%d秒',$diff->s);
                     }
                     echo $time;
-                    echo("</pre></td></tr></p>");    
+                    $point="5:0:0";
+                    
+                    echo("</pre></td></tr></p>");   
+                
                 } ?>     
         </table>   
     </body> 

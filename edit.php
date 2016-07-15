@@ -1,7 +1,14 @@
+<?php session_start();
+$user_name=$_GET['user_name'];
+if ($user_name != $_SESSION["user_name"]) {
+  header("Location: todo_list.php");
+  exit;
+} else { ?>
+<div align="center"><?php echo $_SESSION["user_name"] ?></div>
 <?php
     $task=$_GET['task'];
     $id=$_GET['id'];
-    $name=$_GET['name'];
+    $category_id=$_GET['category_id'];
 ?>
 <form action="edited.php" method="post">
     <?php
@@ -13,12 +20,15 @@
          <tr>
              <td>
                 <select name="category_id">
-                    <option value=<?php echo$name;?>><?php echo$name;?></option>
                     <?php
-                    while($row =$result->fetch_assoc()){
-                    $data[] = $row;?>
-                    <option value="<?php echo $row['id'];?>"> <?php echo $row['name'];?> </option>
-                    <?php } ?> 
+                         while($row =$result->fetch_assoc()){
+                            $data[] = $row;
+                            if($row['id']==$category_id){?>
+                                <option value="<?php echo $row['id'];?>"selected="selected"> <?php echo $row['name'];?> </option>
+                            <?php }else{ ?>
+                                 <option value="<?php echo $row['id'];?>"> <?php echo $row['name'];?> </option>
+                            <?php } ?>
+                        <?php } ?> 
                 </select>
             </td>
             <td>
@@ -32,3 +42,4 @@
         </tr>
     </table>
 </form>
+<?php } 

@@ -18,19 +18,24 @@ function database($code){
  */
 function get_list($have){
     if($have == TRUE){
-        $result=database("SELECT todo_list.id , todo_list.task , todo_list.created_at , todo_list.completed_at , todo_list.category_id , category.name
-        FROM todo_list
-        left outer JOIN category
-        ON todo_list.category_id= category.id where completed_at is null
-        ORDER BY todo_list.id DESC ;");
+       $result=  database("select todo_list.id , todo_list.task , todo_list.created_at , todo_list.completed_at , todo_list.category_id , category.name , 
+        user.user_name from todo_list 
+        left outer join category on todo_list.category_id = category.id
+        left outer join user on todo_list.user_id = user.id
+        where completed_at is null ORDER BY todo_list.id DESC;");
+//        $result=database("SELECT todo_list.id , todo_list.task , todo_list.created_at , todo_list.completed_at , todo_list.category_id , category.name 
+//        FROM todo_list
+//        left outer JOIN category
+//        ON todo_list.category_id= category.id where completed_at is null
+//        ORDER BY todo_list.id DESC ;");
         return $result;
     }
     if($have == FALSE){
-        $result=database("SELECT todo_list.id , todo_list.task , todo_list.created_at , todo_list.completed_at , todo_list.category_id , category.name
-        FROM todo_list
-        left outer JOIN category
-        ON todo_list.category_id= category.id where completed_at is not null
-        ORDER BY todo_list.id DESC ;");
+        $result=database("select todo_list.id , todo_list.task , todo_list.created_at , todo_list.completed_at , todo_list.category_id , category.name , 
+        user.user_name from todo_list 
+        left outer join category on todo_list.category_id = category.id
+        left outer join user on todo_list.user_id = user.id
+        where completed_at is not null ORDER BY todo_list.id DESC;");
         return $result;
     }
 }
@@ -41,8 +46,8 @@ function get_list($have){
  * @param int $category_id　　カテゴリのID
  * @return boolean sql文が実行成功/失敗
  */
-function add_todo($task,$time,$category_id){
-    $result=database("INSERT INTO todo_list (task,created_at,category_id) values ('".$task."','".$time."','".$category_id."');");
+function add_todo($task,$time,$category_id,$user_id){
+    $result=database("INSERT INTO todo_list (task,created_at,category_id,user_id) values ('".$task."','".$time."','".$category_id."','".$user_id."');");
     return $result;
 }
 /**
@@ -50,8 +55,8 @@ function add_todo($task,$time,$category_id){
  * @param int $id　削除するtaskのID
  * @return boolean sql文が実行成功/失敗
  */
-function delete_todo($id){
-    $result=database("DELETE FROM todo_list WHERE id =".$id);
+function delete_todo($id,$user_id){
+    $result=database("DELETE FROM todo_list WHERE id =".$id." and user_id=".$user_id.";");
     return $result;
 }
 /**
@@ -71,8 +76,8 @@ function edit_todo($task,$category_id,$id){
  * @param int $id　taskのID
  * @return boolean sql文が実行成功/失敗
  */
-function completed($completed_at,$id){
-    $result=database("UPDATE todo_list SET completed_at ='".$completed_at."' WHERE id =".$id.";");
+function completed($completed_at,$id,$user_id){
+    $result=database("UPDATE todo_list SET completed_at ='".$completed_at."' WHERE id ='$id' and user_id='$user_id';");
     return $result;  
 }
 /**
@@ -110,4 +115,34 @@ function category_delete($id){
 function category_edit($name,$id){
     $result=database("UPDATE category SET name ='".$name."' WHERE id =".$id.";");
     return $result;
+}
+/**
+ * カテゴリ別task表示する
+ * @param int $id　カテゴリのID
+ * @return mysqli_result　対応するカラムとデータ
+ */
+function get_by_category($id){
+        $result=database("select todo_list.id , todo_list.task , todo_list.created_at , todo_list.completed_at , todo_list.category_id , category.name , 
+        user.user_name from todo_list 
+        left outer join category on todo_list.category_id = category.id
+        left outer join user on todo_list.user_id = user.id
+        where completed_at is null and category_id='$id' ORDER BY todo_list.id DESC;");
+//        $result=database("SELECT todo_list.id , todo_list.task , todo_list.created_at , todo_list.completed_at , todo_list.category_id , category.name
+//        FROM todo_list
+//        left outer JOIN category
+//        ON todo_list.category_id= category.id where completed_at is null and category.id= '$id'
+//        ORDER BY todo_list.id DESC ;");
+        return $result;
+}
+function get_user(){
+    $result=database("SELECT * from user");
+    return $result; 
+}
+function get_by_user($id){
+        $result=database("select todo_list.id , todo_list.task , todo_list.created_at , todo_list.completed_at , todo_list.category_id , category.name , 
+        user.user_name from todo_list 
+        left outer join category on todo_list.category_id = category.id
+        left outer join user on todo_list.user_id = user.id
+        where completed_at is null and user_id='$id' ORDER BY todo_list.id DESC;");
+          return $result; 
 }
