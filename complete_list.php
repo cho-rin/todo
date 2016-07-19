@@ -49,7 +49,6 @@
                     $time=$time.sprintf('%d秒',$diff->s);
                     }
                     echo $time;
-                    $point="5:0:0";
                     
                     echo("</pre></td></tr></p>");   
                 
