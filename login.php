@@ -16,6 +16,11 @@
         </tr>
       </table>
         <input type="submit" value="ログイン">
+        <table>
+            <tr>
+                <td><a href="new.php?">新規登録</a></td>
+            </tr>
+        </table>   
     </form>
   </body>
 </html>

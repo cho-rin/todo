@@ -9,8 +9,19 @@ if (!isset($_SESSION["user_name"])) {
     <table border="1">
         <tr>
             <td>
-                <?php
+                 <?php
                     require_once '/common/database.php';
+                   $result=database("SELECT * from type");
+                    $data = [];?>
+                    <select name="type_id">
+                        <?php
+                            while($row =$result->fetch_assoc()){
+                                $data[] = $row;?>
+                                <option value="<?php echo $row['id'];?>"> <?php echo $row['type'];?></option>
+                            <?php } ?> 
+            </td>
+            <td>
+                <?php
                     $result=get_category();
                     $data = [];?>
                     <select name="category_id">

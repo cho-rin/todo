@@ -10,6 +10,7 @@ $name=$row['user_name'];
 if(is_null($id)){ 
 echo "ログイン失敗しましたメールとパスワードを確認してください"; ?>
 <p><a href="login.php"><h2>戻る</h2></a></p>
+<p><a href="new.php?">新規登録はこちら</a></p>
 <?php }
 else{ 
  header("Location: todo_list.php");
