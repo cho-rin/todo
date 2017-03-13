@@ -8,5 +8,6 @@
     require_once '/common/database.php';
     $result = add_todo($task,$time,$category_id,$type_id,$user_id);
     header("Location:http://localhost/todo/todo_list.php");
-?>
+
+
 

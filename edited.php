@@ -7,4 +7,3 @@
     $tasked = $_POST['tasked'];
     $result = edit_todo($task,$category_id,$type_id,$id,$tasked);
     header("Location:http://localhost/todo/todo_list.php");
-// echo "結果"."task".json_encode($task)."type".  json_encode($type_id);

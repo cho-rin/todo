@@ -3,13 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/todo/test/uuu.php</file>
-            <file>file:/C:/xampp/htdocs/todo/n.php</file>
-            <file>file:/C:/xampp/htdocs/todo/todo_list.php</file>
-            <file>file:/C:/xampp/htdocs/todo/m.php</file>
+            <file>file:/C:/xampp/htdocs/todo/api/task_delete.php</file>
+            <file>file:/C:/xampp/htdocs/todo/test/HP.php</file>
+            <file>file:/C:/xampp/htdocs/todo/register.php</file>
+            <file>file:/C:/xampp/htdocs/todo/test/mailtest003.php</file>
+            <file>file:/C:/xampp/htdocs/todo/api/task_edit.php</file>
+            <file>file:/C:/xampp/htdocs/todo/test/connect.php</file>
+            <file>file:/C:/xampp/htdocs/todo/test/smtp.class.php</file>
+            <file>file:/C:/xampp/htdocs/todo/test/mailtest001.php</file>
+            <file>file:/C:/xampp/htdocs/todo/connect.php</file>
             <file>file:/C:/xampp/htdocs/todo/common/database.php</file>
-            <file>file:/C:/xampp/htdocs/todo/completed_at.php</file>
-            <file>file:/C:/xampp/htdocs/todo/login.php</file>
+            <file>file:/C:/xampp/htdocs/todo/api/task_add.php</file>
+            <file>file:/C:/xampp/htdocs/todo/test/register.php</file>
         </group>
     </open-files>
 </project-private>

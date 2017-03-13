@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>javascript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+   <script>
+document.write("<h1>This is a heading</h1>");
+document.write("<p>This is a paragraph</p>");
+   </script>
+   <button type="button" onclick="alert('Welcome!')">ここ</button>
+    </body>
+</html>
+<!DOCTYPE html>
+<html>
+        <head>
+        <title>javascript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+
+<h1>何々 JavaScript</h1>
+
+<p id="demo">
+JavaScript は HTML の内容。
+</p>
+
+<script>
+function myFunction()
+{
+x=document.getElementById("demo");  
+x.innerHTML="Hello JavaScript!";    // チェンジ
+}
+</script>
+
+<button type="button" onclick="myFunction()">OH</button>
+
+</body>
+</html>
+
+<html>
+<body>
+
+
+    <p>数値じゃなかったらなにかでてくる</p>
+
+<input id="demo" type="text">
+
+<script>
+function myFunction()
+{
+var x=document.getElementById("demo").value;
+if(x==""||isNaN(x))
+	{
+	alert("Not Numeric");
+	}
+}
+</script>
+
+<button type="button" onclick="myFunction()">オス</button>
+
+</body>
+</html>
+
+<html>
+<body>
+<script>
+function changeImage()
+{
+element=document.getElementById('myimage')
+if (element.src.match("bulbon"))
+  {
+  element.src="/i/eg_bulboff.gif";
+  }
+else
+  {
+  element.src="/i/eg_bulbon.gif";
+  }
+}
+</script>
+
+<img id="myimage" onclick="changeImage()" src="/i/eg_bulboff.gif">
+
+<p>点击灯泡来点亮或熄灭这盏灯</p>
+
+</body>
+</html>
+
+
+<p id="demo">
+JavaScript 能改变 HTML 元素的样式。
+</p>
+
+<script>
+function myFunction()
+{
+x=document.getElementById("demo") // 找到元素
+x.style.color="#ff0000";          // 改变样式
+}
+</script>
+
+<button type="button" onclick="myFunction()">点击这里</button>
+
+</body>
+</html>

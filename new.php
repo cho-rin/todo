@@ -13,7 +13,7 @@
           <td><input type="password" name="password"></td>
           <tr>
           <td>パスワードの確認</td>
-          <td><input type="password" name="password"></td>
+          <td><input type="password" name="repassword"></td>
         </tr>
         </tr>
       </table>
